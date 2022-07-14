@@ -1,51 +1,57 @@
 <template>
-    <div class="container">
-        <h1>Home Vue</h1>
-        <h2>I miei post:</h2>
 
-        <ul>
-            <li v-for="post in posts" :key="post.id">
-                <h3>{{post.title}}</h3>
-                <p>{{post.content}}</p>
-            </li>
-        </ul>
-    </div>
+<div>
+    <HeaderComp/>
+
+    <main>
+
+        <router-view></router-view>
+
+    </main>
+
+
+    <FooterComp/>
+</div>
+
 </template>
 
 <script>
 
-// import Axios from 'axios';
+import HeaderComp from './components/HeaderComp.vue';
+import FooterComp from './components/FooterComp.vue';
+
 
 export default {
-    name:'App',
-    data(){
-        return{
-            apiUrl:'http://127.0.0.1:8000/api/posts',
-            posts: null
-        }
+    name: "App",
+    components:{
+        HeaderComp,
+        FooterComp
     },
-    methods:{
-        getApi(){
-            // console.log('API');
-            // console.log(axios);
-
-            axios.get(this.apiUrl)
-            .then(res => {
-                this.posts = res.data;
-                console.log(this.posts);
-            })
-
-        }
-
+    data() {
+        return {
+            // apiUrl: "http://127.0.0.1:8000/api/posts",
+            // posts: null
+        };
     },
-    mounted(){
-        this.getApi();
-    }
-
+    methods: {
+        // getApi() {
+        //     // console.log('API');
+        //     // console.log(axios);
+        //     axios.get(this.apiUrl)
+        //         .then(res => {
+        //         this.posts = res.data;
+        //         console.log(this.posts);
+        //     });
+        // }
+    },
+    mounted() {
+        // this.getApi();
+    },
 
 }
 </script>
 
 <style>
+
 
 </style>
