@@ -4,7 +4,7 @@
 
 <script>
 export default {
-    name:'Contatti'
+    name:'ContactComp'
 
 }
 </script>

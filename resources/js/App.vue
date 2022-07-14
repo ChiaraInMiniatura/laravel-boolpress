@@ -3,7 +3,7 @@
 <div>
     <HeaderComp/>
 
-    <main>
+    <main class="container">
 
         <router-view></router-view>
 
