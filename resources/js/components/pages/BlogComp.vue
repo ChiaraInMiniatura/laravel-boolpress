@@ -40,6 +40,7 @@ export default {
     },
     components: { PostItem }
 }
+
 </script>
 
 <style>

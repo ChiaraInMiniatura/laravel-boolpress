@@ -1978,10 +1978,27 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'PostItem',
   props: {
     post: Object
+  },
+  computed: {
+    shortContent: function shortContent() {
+      return this.post.content.substr(0, 70) + "...";
+    },
+    formaDate: function formaDate() {
+      var d = new Date(this.post.updated_at);
+      var day = d.getDate();
+      var month = d.getMonth() + 1;
+      var year = d.getFullYear();
+      if (day < 10) day = '0' + day;
+      if (day < 10) month = '0' + day;
+      return "".concat(day, "/").concat(month, "/").concat(year);
+    }
   }
 });
 
@@ -2190,7 +2207,7 @@ var render = function render() {
 
   return _c("div", {
     staticClass: "post"
-  }, [_c("h3", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.post.content))])]);
+  }, [_c("h3", [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("i", [_vm._v(_vm._s(_vm.formaDate))]), _vm._v(" "), _c("p", [_vm._v(_vm._s(_vm.shortContent))])]);
 };
 
 var staticRenderFns = [];
