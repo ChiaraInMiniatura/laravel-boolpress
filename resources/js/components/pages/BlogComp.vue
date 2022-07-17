@@ -15,6 +15,8 @@
 
 <script>
 import PostItem from "../PostItem.vue";
+import { apiUrl } from "../data/config";
+
 export default {
     name: "BlogComp",
     components:{
@@ -22,7 +24,7 @@ export default {
     },
     data() {
         return {
-            apiUrl: "/api/posts",
+            apiUrl,
             posts: null
         };
     },

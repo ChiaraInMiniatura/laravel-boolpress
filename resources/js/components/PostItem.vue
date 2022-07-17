@@ -1,6 +1,8 @@
 <template>
 <div class="post">
-    <h3>{{post.title}}</h3>
+    <h3>
+        <router-link :to="{name: 'detail', params: {slug: post.slug} }">{{post.title}}</router-link>
+    </h3>
     <i>{{formaDate}}</i>
     <p>{{shortContent}}</p>
 </div>
@@ -42,5 +44,12 @@ export default {
 
 .post{
     padding: 10px 0 10px;
+    a{
+        color: black;
+        text-decoration: none;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
 }
 </style>
